@@ -219,8 +219,8 @@ cmaE <- CMA_per_episode(CMA="CMA9", # apply the simple CMA9 to each treatment ep
                         observation.window.duration=365*2,
                         observation.window.duration.unit = "days",
                         date.format="%m/%d/%Y",
-                        parallel.backend="snow", # parallel processing speeds things up
-                        parallel.threads=2);
+                        parallel.backend="none",
+                        parallel.threads=1);
 # Summary:
 cmaE;
 # The CMA estimates table:
@@ -251,8 +251,8 @@ cmaW <- CMA_sliding_window(CMA.to.apply="CMA9", # apply the simple CMA9 to each 
                            sliding.window.step.duration=120,
                            sliding.window.step.unit="days",
                            date.format="%m/%d/%Y",
-                           parallel.backend="snow", # parallel processing speeds things up
-                           parallel.threads=2);
+                           parallel.backend="none",
+                           parallel.threads=1);
 # Summary:
 cmaW;
 # The CMA estimates table:
@@ -283,8 +283,8 @@ cmaW1 <- CMA_sliding_window(CMA.to.apply="CMA9",
                            sliding.window.step.duration=30,
                            sliding.window.step.unit="days",
                            date.format="%m/%d/%Y",
-                           parallel.backend="snow",
-                           parallel.threads=3);
+                           parallel.backend="none",
+                           parallel.threads=1);
 # Plot:
 plot(cmaW1, patients.to.plot=c("76"), show.legend=FALSE);
 
@@ -299,4 +299,24 @@ plot(cmaW1, patients.to.plot=c("76"), show.legend=FALSE);
 #                       event.daily.dose.colname="PERDAY",
 #                       medication.class.colname="CATEGORY",
 #                       date.format="%m/%d/%Y");
+
+## ----eval=FALSE----------------------------------------------------------
+#  cmaW3 <- CMA_sliding_window(CMA="CMA1",
+#                              data=med.events,
+#                              ID.colname="PATIENT_ID",
+#                              event.date.colname="DATE",
+#                              event.duration.colname="DURATION",
+#                              event.daily.dose.colname="PERDAY",
+#                              medication.class.colname="CATEGORY",
+#                              carry.only.for.same.medication=FALSE,
+#                              consider.dosage.change=FALSE,
+#                              sliding.window.duration=30,
+#                              sliding.window.step.duration=30,
+#                              parallel.backend="snow", # make clear we want to use snow
+#                              parallel.threads=c(rep(
+#                                list(list(host="user@workhorse", # host (and user)
+#                                          rscript="/usr/local/bin/Rscript", # Rscript location
+#                                          snowlib="/usr/local/lib64/R/library/") # snow package location
+#                                     ),
+#                                2))) # two remote threads
 

@@ -1,13 +1,13 @@
 Package: AdhereR
 Type: Package
 Title: Adherence to Medications
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: c(person("Dan", "Dediu", role = c("aut", "cre"),
                      email = "ddediu@gmail.com"),
               person("Alexandra", "Dima", role = "aut",
                      email = "alexadima@gmail.com"))
 Author: Dan Dediu [aut, cre],
-        Alexandra Dima [aut]
+  Alexandra Dima [aut]
 Maintainer: Dan Dediu <ddediu@gmail.com>
 Description: Computation of adherence to medications from Electronic Health care 
     Data and visualization of individual medication histories and adherence 
@@ -23,11 +23,11 @@ License: GPL (>= 2)
 LazyData: TRUE
 RoxygenNote: 6.0.1
 Imports: lubridate (>= 1.5), parallel (>= 3.0), data.table (>= 1.9),
-        manipulate (>= 1.0), snow (>= 0.4)
+        manipulate (>= 1.0), shiny (>= 1.0)
 Depends: R (>= 3.0)
-Suggests: knitr (>= 1.15), rmarkdown (>= 1.1),
+Suggests: knitr (>= 1.15), rmarkdown (>= 1.1)
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2017-04-26 12:37:01 UTC; ddediu
+Packaged: 2018-06-15 09:00:14 UTC; ddediu
 Repository: CRAN
-Date/Publication: 2017-04-27 16:21:14 UTC
+Date/Publication: 2018-06-15 09:11:01 UTC
