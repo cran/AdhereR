@@ -1,6 +1,6 @@
-b784561c855dbf95d73c22d0c81af91b *DESCRIPTION
+70f02ef00c2803fa7eb11eaa005540f9 *DESCRIPTION
 c0e7fef377a1e8378931460fc3200d74 *NAMESPACE
-3a40955003adc7b136c9dbc266be6624 *R/adherer.R
+191c853e72ad6e5f54239170d5e01e95 *R/adherer.R
 781bb628c85266c5ebb827d46b73129b *R/call-adherer-external.R
 0b27a7099e5bcc16e6aa9317b515539a *R/matching_function.R
 3ba9735176e3a8c5bb3d0eeca13d2f21 *build/vignette.rds
@@ -9,13 +9,13 @@ f763d5d68467434b2ad9b621802c7ee4 *data/durcomp.rda
 a59fe19938b0465bc2dc5361a270b2f9 *inst/CITATION
 00cf7c8f45f1b2aae4975fd642fe7b96 *inst/doc/AdhereR-overview.R
 7348673983078c974d490fb982ed7b61 *inst/doc/AdhereR-overview.Rmd
-693804980fd2cbad23bf94ac7cc65a32 *inst/doc/AdhereR-overview.html
+c319b434fa9d5ea24bbfeb7ed9349a3d *inst/doc/AdhereR-overview.html
 6699c2ac20b0895388e4381155290976 *inst/doc/adherer_with_databases.pdf
 04c23c20d4796d2f2b629a1864e5ad43 *inst/doc/adherer_with_databases.pdf.asis
 a8d4e03ebc1ff92ec4698a1cfea6f4e9 *inst/doc/calling-AdhereR-from-python3.R
 cd11dae259e70af60d993c7116f40b3f *inst/doc/calling-AdhereR-from-python3.Rmd
-599f5c0bc2fb3acac9428f6cb0010f05 *inst/doc/calling-AdhereR-from-python3.html
-5f926e1c97583a5687cce7d0deb39f9f *inst/interactivePlotShiny/app.R
+d0256d974a1f9d72f9b06170d4888763 *inst/doc/calling-AdhereR-from-python3.html
+3ba5e1b1b8eb70084f48a8d4af7fb5fc *inst/interactivePlotShiny/app.R
 faf31904f9f842e8e295f052b8058d8f *inst/interactivePlotShiny/r-code-highlight.css
 dd7560f8b0aa125af5487520a355c027 *inst/interactivePlotShiny/www/adherer-logo-bw.png
 267bcbe8f8f8764da976c07d415c08b4 *inst/interactivePlotShiny/www/adherer-logo-bw.svg
@@ -77,7 +77,7 @@ dac8b23a729a16170b9c6ad94bfa9451 *man/durcomp.hospitalisation.Rd
 641cbf63a90e72ad6621e21ec6efbf14 *man/getCMA.Rd
 ea31c5680532a0bd3ab976ec91d86d31 *man/getCallerWrapperLocation.Rd
 0445a9520e518ea9b05fa4ff26506dbb *man/med.events.Rd
-76faa0ccd2333e27f27387be8620adf3 *man/plot.CMA0.Rd
+62d4f0951de8bd10afdc0f36a4ecaf85 *man/plot.CMA0.Rd
 6df377097873ff6e381d06b3de8d2fc4 *man/plot.CMA1.Rd
 371373e9167e4928c2a774072da4bcd3 *man/plot.CMA_per_episode.Rd
 4e8d75282db980bec549d4965d044820 *man/plot_interactive_cma.Rd
