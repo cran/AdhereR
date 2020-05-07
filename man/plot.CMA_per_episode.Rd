@@ -5,35 +5,189 @@
 \alias{plot.CMA_sliding_window}
 \title{Plot CMA_per_episode and CMA_sliding_window objects.}
 \usage{
-\method{plot}{CMA_per_episode}(x, ..., patients.to.plot = NULL,
-  duration = NA, align.all.patients = FALSE,
-  align.first.event.at.zero = TRUE, show.period = c("dates",
-  "days")[2], period.in.days = 90, show.legend = TRUE,
-  legend.x = "right", legend.y = "bottom", legend.bkg.opacity = 0.5,
-  cex = 1, cex.axis = 0.75, cex.lab = 1, show.cma = TRUE,
-  col.cats = rainbow, unspecified.category.label = "drug",
-  lty.event = "solid", lwd.event = 2, pch.start.event = 15,
-  pch.end.event = 16, col.na = "lightgray",
-  col.continuation = "black", lty.continuation = "dotted",
-  lwd.continuation = 1, print.CMA = TRUE, CMA.cex = 0.5,
-  plot.CMA = TRUE, plot.CMA.as.histogram = TRUE,
-  CMA.plot.ratio = 0.1, CMA.plot.col = "lightgreen",
-  CMA.plot.border = "darkgreen", CMA.plot.bkg = "aquamarine",
-  CMA.plot.text = CMA.plot.border, highlight.followup.window = TRUE,
-  followup.window.col = "green", highlight.observation.window = TRUE,
-  observation.window.col = "yellow", observation.window.density = 35,
-  observation.window.angle = -30, show.real.obs.window.start = TRUE,
-  real.obs.window.density = 35, real.obs.window.angle = 30,
-  bw.plot = FALSE)
+\method{plot}{CMA_per_episode}(
+  x,
+  patients.to.plot = NULL,
+  duration = NA,
+  align.all.patients = FALSE,
+  align.first.event.at.zero = TRUE,
+  show.period = c("dates", "days")[2],
+  period.in.days = 90,
+  show.legend = TRUE,
+  legend.x = "right",
+  legend.y = "bottom",
+  legend.bkg.opacity = 0.5,
+  legend.cex = 0.75,
+  legend.cex.title = 1,
+  legend.medication.truncate = 15,
+  legend.medication.truncate.side = c("left", "center", "right")[2],
+  cex = 1,
+  cex.axis = 0.75,
+  cex.lab = 1,
+  show.cma = TRUE,
+  xlab = c(dates = "Date", days = "Days"),
+  ylab = c(withoutCMA = "patient", withCMA = "patient (& CMA)"),
+  title = c(aligned = "Event patterns (all patients aligned)", notaligned =
+    "Event patterns"),
+  col.cats = rainbow,
+  unspecified.category.label = "drug",
+  lty.event = "solid",
+  lwd.event = 2,
+  pch.start.event = 15,
+  pch.end.event = 16,
+  plot.events.vertically.displaced = TRUE,
+  print.dose = FALSE,
+  cex.dose = 0.75,
+  print.dose.outline.col = "white",
+  print.dose.centered = FALSE,
+  plot.dose = FALSE,
+  lwd.event.max.dose = 8,
+  plot.dose.lwd.across.medication.classes = FALSE,
+  col.na = "lightgray",
+  col.continuation = "black",
+  lty.continuation = "dotted",
+  lwd.continuation = 1,
+  print.CMA = TRUE,
+  CMA.cex = 0.5,
+  plot.CMA = TRUE,
+  plot.CMA.as.histogram = TRUE,
+  plot.partial.CMAs.as = c("stacked", "overlapping", "timeseries")[1],
+  plot.partial.CMAs.as.stacked.col.bars = "gray90",
+  plot.partial.CMAs.as.stacked.col.border = "gray30",
+  plot.partial.CMAs.as.stacked.col.text = "black",
+  plot.partial.CMAs.as.timeseries.vspace = 7,
+  plot.partial.CMAs.as.timeseries.start.from.zero = TRUE,
+  plot.partial.CMAs.as.timeseries.col.dot = "darkblue",
+  plot.partial.CMAs.as.timeseries.col.interval = "gray70",
+  plot.partial.CMAs.as.timeseries.col.text = "firebrick",
+  plot.partial.CMAs.as.timeseries.interval.type = c("none", "segments", "arrows",
+    "lines", "rectangles")[2],
+  plot.partial.CMAs.as.timeseries.lwd.interval = 1,
+  plot.partial.CMAs.as.timeseries.alpha.interval = 0.25,
+  plot.partial.CMAs.as.timeseries.show.0perc = TRUE,
+  plot.partial.CMAs.as.timeseries.show.100perc = FALSE,
+  plot.partial.CMAs.as.overlapping.alternate = TRUE,
+  plot.partial.CMAs.as.overlapping.col.interval = "gray70",
+  plot.partial.CMAs.as.overlapping.col.text = "firebrick",
+  CMA.plot.ratio = 0.1,
+  CMA.plot.col = "lightgreen",
+  CMA.plot.border = "darkgreen",
+  CMA.plot.bkg = "aquamarine",
+  CMA.plot.text = CMA.plot.border,
+  highlight.followup.window = TRUE,
+  followup.window.col = "green",
+  highlight.observation.window = TRUE,
+  observation.window.col = "yellow",
+  observation.window.opacity = 0.3,
+  alternating.bands.cols = c("white", "gray95"),
+  bw.plot = FALSE,
+  min.plot.size.in.characters.horiz = 10,
+  min.plot.size.in.characters.vert = 0.25,
+  max.patients.to.plot = 100,
+  suppress.warnings = FALSE,
+  export.formats = NULL,
+  export.formats.fileprefix = "AdhereR-plot",
+  export.formats.height = NA,
+  export.formats.width = NA,
+  export.formats.save.svg.placeholder = TRUE,
+  export.formats.directory = NA,
+  generate.R.plot = TRUE,
+  ...
+)
 
-\method{plot}{CMA_sliding_window}(...)
+\method{plot}{CMA_sliding_window}(
+  x,
+  patients.to.plot = NULL,
+  duration = NA,
+  align.all.patients = FALSE,
+  align.first.event.at.zero = TRUE,
+  show.period = c("dates", "days")[2],
+  period.in.days = 90,
+  show.legend = TRUE,
+  legend.x = "right",
+  legend.y = "bottom",
+  legend.bkg.opacity = 0.5,
+  legend.cex = 0.75,
+  legend.cex.title = 1,
+  legend.medication.truncate = 15,
+  legend.medication.truncate.side = c("left", "center", "right")[2],
+  cex = 1,
+  cex.axis = 0.75,
+  cex.lab = 1,
+  show.cma = TRUE,
+  xlab = c(dates = "Date", days = "Days"),
+  ylab = c(withoutCMA = "patient", withCMA = "patient (& CMA)"),
+  title = c(aligned = "Event patterns (all patients aligned)", notaligned =
+    "Event patterns"),
+  col.cats = rainbow,
+  unspecified.category.label = "drug",
+  lty.event = "solid",
+  lwd.event = 2,
+  pch.start.event = 15,
+  pch.end.event = 16,
+  plot.events.vertically.displaced = TRUE,
+  print.dose = FALSE,
+  cex.dose = 0.75,
+  print.dose.outline.col = "white",
+  print.dose.centered = FALSE,
+  plot.dose = FALSE,
+  lwd.event.max.dose = 8,
+  plot.dose.lwd.across.medication.classes = FALSE,
+  col.na = "lightgray",
+  col.continuation = "black",
+  lty.continuation = "dotted",
+  lwd.continuation = 1,
+  print.CMA = TRUE,
+  CMA.cex = 0.5,
+  plot.CMA = TRUE,
+  plot.CMA.as.histogram = TRUE,
+  plot.partial.CMAs.as = c("stacked", "overlapping", "timeseries")[1],
+  plot.partial.CMAs.as.stacked.col.bars = "gray90",
+  plot.partial.CMAs.as.stacked.col.border = "gray30",
+  plot.partial.CMAs.as.stacked.col.text = "black",
+  plot.partial.CMAs.as.timeseries.vspace = 7,
+  plot.partial.CMAs.as.timeseries.start.from.zero = TRUE,
+  plot.partial.CMAs.as.timeseries.col.dot = "darkblue",
+  plot.partial.CMAs.as.timeseries.col.interval = "gray70",
+  plot.partial.CMAs.as.timeseries.col.text = "firebrick",
+  plot.partial.CMAs.as.timeseries.interval.type = c("none", "segments", "arrows",
+    "lines", "rectangles")[2],
+  plot.partial.CMAs.as.timeseries.lwd.interval = 1,
+  plot.partial.CMAs.as.timeseries.alpha.interval = 0.25,
+  plot.partial.CMAs.as.timeseries.show.0perc = TRUE,
+  plot.partial.CMAs.as.timeseries.show.100perc = FALSE,
+  plot.partial.CMAs.as.overlapping.alternate = TRUE,
+  plot.partial.CMAs.as.overlapping.col.interval = "gray70",
+  plot.partial.CMAs.as.overlapping.col.text = "firebrick",
+  CMA.plot.ratio = 0.1,
+  CMA.plot.col = "lightgreen",
+  CMA.plot.border = "darkgreen",
+  CMA.plot.bkg = "aquamarine",
+  CMA.plot.text = CMA.plot.border,
+  highlight.followup.window = TRUE,
+  followup.window.col = "green",
+  highlight.observation.window = TRUE,
+  observation.window.col = "yellow",
+  observation.window.opacity = 0.3,
+  alternating.bands.cols = c("white", "gray95"),
+  bw.plot = FALSE,
+  min.plot.size.in.characters.horiz = 10,
+  min.plot.size.in.characters.vert = 0.25,
+  max.patients.to.plot = 100,
+  suppress.warnings = FALSE,
+  export.formats = NULL,
+  export.formats.fileprefix = "AdhereR-plot",
+  export.formats.height = NA,
+  export.formats.width = NA,
+  export.formats.save.svg.placeholder = TRUE,
+  export.formats.directory = NA,
+  generate.R.plot = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{A \emph{\code{CMA0}} or derived object, representing the CMA to
 plot}
-
-\item{...}{other parameters (to be passed to the estimation and plotting of
-the simple CMA)}
 
 \item{patients.to.plot}{A vector of \emph{strings} containing the list of
 patient IDs to plot (a subset of those in the \code{cma} object), or
@@ -69,10 +223,29 @@ drawn (or 0 for no grid).}
 \item{legend.bkg.opacity}{A \emph{number} between 0.0 and 1.0 specifying the
 opacity of the legend background.}
 
+\item{legend.cex, legend.cex.title}{The legend and legend title font sizes.}
+
+\item{legend.medication.truncate}{A \emph{number} specifying the maximum length
+(in character) of the medication class showin in the legend (or \code{NA} for
+no truncation).}
+
+\item{legend.medication.truncate.side}{A \emph{string} specifying how the medication
+truncation is done (if \code{legend.medication.truncate} is not \code{NA}); can
+be "left", "right" or "center".}
+
 \item{cex, cex.axis, cex.lab}{\emph{numeric} values specifying the cex of the
 various types of text.}
 
 \item{show.cma}{\emph{Logical}, should the CMA type be shown in the title?}
+
+\item{xlab}{Named vector of x-axis labels to show for the two types of periods
+("days" and "dates"), or a single value for both, or \code{NULL} for nothing.}
+
+\item{ylab}{Named vector of y-axis labels to show without and with CMA estimates,
+or a single value for both, or \code{NULL} for nonthing.}
+
+\item{title}{Named vector of titles to show for and without alignment, or a
+single value for both, or \code{NULL} for nonthing.}
 
 \item{col.cats}{A \emph{color} or a \emph{function} that specifies the single
 colour or the colour palette used to plot the different medication; by
@@ -84,6 +257,15 @@ unspecified (generic) medication category.}
 
 \item{lty.event, lwd.event, pch.start.event, pch.end.event}{The style of the
 event (line style, width, and start and end symbols).}
+
+\item{plot.events.vertically.displaced}{Should consecutive events be plotted
+on separate rows (i.e., separated vertically, the default) or on the same row?}
+
+\item{print.dose, cex.dose, print.dose.outline.col, print.dose.centered}{Print daily
+dose as a number and, if so, how (color, size, position...).}
+
+\item{plot.dose, lwd.event.max.dose, plot.dose.lwd.across.medication.classes}{Show dose through the width of the event lines and, if so, what the maximum
+width should be, and should this maximum be by medication class or overall.}
 
 \item{col.na}{The colour used for missing event data.}
 
@@ -103,6 +285,16 @@ deafult for CMA_per_episode and FALSE for CMA_sliding_window, because
 usually there are more sliding windows than episodes. Also, the density
 estimate canot be estimated for less than three different values.}
 
+\item{plot.partial.CMAs.as}{Plot the partial CMAs at all (\code{NULL}), and
+if so, how (can be "stacked", "overlapping" or "timeseries").}
+
+\item{plot.partial.CMAs.as.stacked.col.bars, plot.partial.CMAs.as.stacked.col.border, plot.partial.CMAs.as.stacked.col.text}{If plotting the partial CMAs as stacked bars, define their graphical attributes.}
+
+\item{plot.partial.CMAs.as.timeseries.vspace, plot.partial.CMAs.as.timeseries.start.from.zero, plot.partial.CMAs.as.timeseries.col.dot, plot.partial.CMAs.as.timeseries.col.interval, plot.partial.CMAs.as.timeseries.col.text, plot.partial.CMAs.as.timeseries.interval.type, plot.partial.CMAs.as.timeseries.lwd.interval, plot.partial.CMAs.as.timeseries.alpha.interval, plot.partial.CMAs.as.timeseries.show.0perc, plot.partial.CMAs.as.timeseries.show.100perc}{If plotting the partial CMAs as imeseries, these are their graphical attributes.}
+
+\item{plot.partial.CMAs.as.overlapping.alternate, plot.partial.CMAs.as.overlapping.col.interval, plot.partial.CMAs.as.overlapping.col.text}{If plotting the partial CMAs as overlapping segments, these are their
+graphical attributes.}
+
 \item{CMA.plot.ratio}{A \emph{number}, the proportion of the total horizontal
 plot space to be allocated to the CMA plot.}
 
@@ -117,14 +309,50 @@ be plotted?}
 \item{highlight.observation.window}{\emph{Logical}, should the observation
 window be plotted?}
 
-\item{observation.window.col, observation.window.density, observation.window.angle}{Attributes of the observation window
-(colour, shading density and angle).}
+\item{observation.window.col, observation.window.opacity}{Attributes of the observation window (colour, transparency).}
 
-\item{show.real.obs.window.start, real.obs.window.density, real.obs.window.angle}{For some CMAs, the observation window
-might be adjusted, in which case should it be plotted and with that attributes?}
+\item{alternating.bands.cols}{The colors of the alternating vertical bands
+distinguishing the patients; can be \code{NULL} = don't draw the bandes;
+or a vector of colors.}
 
 \item{bw.plot}{\emph{Logical}, should the plot use grayscale only (i.e., the
 \code{\link[grDevices]{gray.colors}} function)?}
+
+\item{min.plot.size.in.characters.horiz, min.plot.size.in.characters.vert}{\emph{Numeric}, the minimum size of the plotting surface in characters;
+horizontally (min.plot.size.in.characters.horiz) referes to the the whole
+duration of the events to plot; vertically (min.plot.size.in.characters.vert)
+referes to a single event.}
+
+\item{max.patients.to.plot}{\emph{Numeric}, the maximum patients to attempt
+to plot.}
+
+\item{suppress.warnings}{\emph{Logical}, if \code{TRUE} don't show any
+warnings.}
+
+\item{export.formats}{What formats should the plot be exported to? It can be
+any subset of "svg" (an SVG file), "html" (a self-contained HTML document
+including an embedded SVG image, CSS and the needed JavaScript for some limited
+user interactions, plus an external placeholder JPEG image for those browsers
+not supporting SVGs), "jpg", "png", "webp", "ps" and "pdf". Default to NULL
+(i.e., no plot is exported).}
+
+\item{export.formats.fileprefix}{The file name prefix for the exported
+formats (defaults to "AdhereR-plot").}
+
+\item{export.formats.height, export.formats.width}{The desired dimensions
+of the exported figure (defaults to sane values).}
+
+\item{export.formats.save.svg.placeholder}{\emph{Logical}: if TRUE (the
+default), save a JPG placeholder for the SVG image.}
+
+\item{export.formats.directory}{If exporting the plot, which directory to
+export to (if not given, uses a temporary directory).}
+
+\item{generate.R.plot}{\emph{Logical}: should it generate a standard
+(base R) plot for plotting within R?}
+
+\item{...}{other parameters (to be passed to the estimation and plotting of
+the simple CMA)}
 }
 \description{
 Plots the event data and the estimated CMA per treatment episode and sliding
