@@ -45,9 +45,8 @@ dosage (the actual column names are defined in the
 following four parameters).}
 
 \item{medication.groups}{A \emph{string} with the name of the column containing the medication
-groups, or a *list of vectors* with medication class names (from \code{medication.class.colname})
- belonging to the same treatment groupf multiple medication classes should belong to the same
- treatment group, they can be differentiated here (important to investigate treatment switches)}
+groups. If multiple medication classes should belong to the same treatment group, they can be
+differentiated here (important to investigate treatment switches)}
 
 \item{CMA.to.apply}{A \emph{string} giving the name of the CMA function (1 to
 9) that will be computed for each treatment group.}
