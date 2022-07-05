@@ -1,11 +1,11 @@
-f9ac2ab6cd33c2bd526de3bf217454fe *DESCRIPTION
+0d21b8ca65e1530b078a2d52cca48e61 *DESCRIPTION
 c05d66ec81c1f9b14c12ccc6229dbbaa *NAMESPACE
 76e21c6f261a01a38dae0f0e1b9ea909 *R/adherer.R
 f8ae422b1db68e70e21010629581fc67 *R/call-adherer-external.R
 a9da357eba297619053ad8c36db61c8e *R/matching_function.R
 2fccff8e1f18ff8be368dcec3f8727ca *R/plotting.R
-626a524f15b2c4e8967196aedebfc9ae *R/polypharmacy.R
-3bd539ad9654c76d5db9af4e111d5e63 *build/partial.rdb
+df809b52f9ca5e3c2bfce12b7035e7bf *R/polypharmacy.R
+2bf557b981f263dbdf53b87628889f96 *build/partial.rdb
 83558d1d78eafbc37559114fda6d1d0a *build/vignette.rds
 f763d5d68467434b2ad9b621802c7ee4 *data/durcomp.rda
 2b577984de73f6d34d2e6d5c9d5d1d7c *data/medevents.rda
@@ -13,12 +13,12 @@ f763d5d68467434b2ad9b621802c7ee4 *data/durcomp.rda
 35e93fbc3fdb1dab9083d3fc84077337 *inst/CITATION
 f440c86f2598bca44e70c6961da2e60c *inst/doc/AdhereR-overview.R
 c7bc3a6962f620c0a5342543ba428e9e *inst/doc/AdhereR-overview.Rmd
-2a3c9d50ca9a5fe3f728ee048e2c1d79 *inst/doc/AdhereR-overview.html
+c5a41ff83b11617fdcd136209365e1ed *inst/doc/AdhereR-overview.html
 6699c2ac20b0895388e4381155290976 *inst/doc/adherer_with_databases.pdf
 04c23c20d4796d2f2b629a1864e5ad43 *inst/doc/adherer_with_databases.pdf.asis
 0695635f52a0e21ec0c024bd4a09a2b3 *inst/doc/calling-AdhereR-from-python3.R
 3237a99ce864f87ed4c55972208c593e *inst/doc/calling-AdhereR-from-python3.Rmd
-61a98955ee00a69e2cfe0f194dd5db29 *inst/doc/calling-AdhereR-from-python3.html
+872e0d4028df2804344b0f2aeffcee43 *inst/doc/calling-AdhereR-from-python3.html
 557f5d5301f2863cbdcaa83e9ba03b01 *inst/html-templates/css-template.css
 380f7945e1d90b4e58533f5b37c7da89 *inst/html-templates/html-template.html
 96c0b44a16a5c6f5001180c683a08dbe *inst/html-templates/javascript-template.js
@@ -29,6 +29,8 @@ bbc54f909db6b3e4ce8510e8d4538bec *inst/specialVignettes/adherer_with_databases.j
 5a9b82ba5149e9bf05ff53be0cd8e4ab *inst/specialVignettes/adherer_with_databases.pptx
 e3e94c49f63bb4c77eaaf7ed71787629 *inst/specialVignettes/apa.csl
 0d5dd25eed831b67d65e65dde5f729a2 *inst/specialVignettes/bibliography.bibtex
+404f10d5daeab615a7afe10068b4cd1f *inst/wrappers/julia/ReadMe.md
+0451e9ff85d2bd2edc2521e82ecb3637 *inst/wrappers/julia/adherer.jl
 1385ca68a8431beca0011bbe0360b34b *inst/wrappers/python3/ReadMe.md
 de346db58fc86e09ea868e4a7ca828d5 *inst/wrappers/python3/adherer.py
 b03cfa476cf995fe36c9f9a923b1c1a9 *inst/wrappers/python3/jupyter_notebook_python3_py2.ipynb
@@ -42,7 +44,7 @@ b3d72e1593ff339372dfc4759ce9a783 *man/CMA1.Rd
 86bd213b09110a706bacc7b4f49e1550 *man/CMA8.Rd
 b5dd82201dd1280a51720f4872a41c2c *man/CMA9.Rd
 502091f76995143b41e0782b89ce68e6 *man/CMA_per_episode.Rd
-47f4ac3ea18686b20a003b71b22c6b27 *man/CMA_polypharmacy.Rd
+52c959823c62a53e015cfcb7190ba070 *man/CMA_polypharmacy.Rd
 9cf42d50c17fd3e607084e4a9922bd53 *man/CMA_sliding_window.Rd
 be96e093b71557c8ca3ab75ab7476538 *man/callAdhereR.Rd
 096f426b892a323206d9bcc896f60a44 *man/compute.event.int.gaps.Rd

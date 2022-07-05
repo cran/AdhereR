@@ -1,7 +1,7 @@
 Package: AdhereR
 Type: Package
 Title: Adherence to Medications
-Version: 0.8.0
+Version: 0.8.1
 Authors@R: c(person("Dan", "Dediu", role = c("aut", "cre"),
                      email = "ddediu@gmail.com"),
              person("Alexandra", "Dima", role = "aut",
@@ -40,6 +40,6 @@ VignetteBuilder: knitr, R.rsp
 Encoding: UTF-8
 RoxygenNote: 7.2.0
 NeedsCompilation: no
-Packaged: 2022-06-23 11:53:56 UTC; ddediu
+Packaged: 2022-07-05 14:45:35 UTC; ddediu
 Repository: CRAN
-Date/Publication: 2022-06-23 12:30:06 UTC
+Date/Publication: 2022-07-05 15:40:18 UTC
